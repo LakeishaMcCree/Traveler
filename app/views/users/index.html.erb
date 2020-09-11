@@ -4,7 +4,7 @@
   <% @users.each do |user| %>
     <div class="underlined-list">
       <span class="no-underline bold-text"><%= link_to user.name, user_destinations_path(user) %> </span><br>
-      <% if user.trips.count >= 1 %>
+      <% if user.destinations.count >= 1 %>
         <p>Last Trip Added: <%= user.last_destination.city.name %></p>
         <% else%>
         <p>No trips added yet</p>

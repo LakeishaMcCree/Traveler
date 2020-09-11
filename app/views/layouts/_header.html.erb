@@ -1,0 +1,13 @@
+<header>
+<% if !logged_in? %>
+  <%= link_to("Log In", login_path) %>
+  <%= link_to("Sign Up", signup_path) %>
+<% else %>
+  <%= link_to("triptracker", user_path(current_user), :class => 'logo') %>
+  <%= link_to("My Trips", user_destinations_path(current_user)) %>
+  <%= link_to("Cities", cities_path) %>
+  <%= link_to("Countries", countries_path) %>
+  <%= link_to("Travelers", users_path) %>
+  <%= link_to("Log Out", logout_path) %>
+<% end %>
+</header>
