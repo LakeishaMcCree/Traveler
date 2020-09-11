@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
  gem 'pry'
 
+ gem 'devise'
+
  gem 'omniauth'
 gem 'omniauth-facebook'
 

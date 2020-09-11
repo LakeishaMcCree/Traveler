@@ -1,6 +1,6 @@
 <div class="form">
-  <h3>Add New Trip</h3><br>
-    <%= form_for :trip, url: user_trips_path do |f| %>
+  <h3>Add New Destination</h3><br>
+    <%= form_for :destination, url: user_destinations_path do |f| %>
       <% if @city %>
         <%= f.hidden_field :city_id, value: @city.id %>
         <%= f.label :city %>
@@ -20,6 +20,6 @@
     <% end %>
 
     <%= render partial: 'form', locals { f: f} %>
-    <%= f.submit "Add Trip", :class => 'btn btn-sm btn-success'%>
+    <%= f.submit "Add Destination", :class => 'btn btn-sm btn-success'%>
   <% end %>
 </div>

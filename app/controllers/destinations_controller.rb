@@ -34,7 +34,7 @@ class DestinationsController < ApplicationController
 
     def edit
         set_user
-        find_destination
+        find_destination    
         if @destination.user != current_user
             redirect_to user_destinations_path(@user), :flash => { :error => "You are not allowed to edit another traveler's trip." }
         end

@@ -3,6 +3,18 @@ class SessionsController < ApplicationController
     def new
     end
 
+    def facebookcreate
+        @user = User.find_or_create_by(uid: auth['uid']) do |u|
+            u.name = auth['info']['name']
+            u.email = auth['info']['email']
+            u.image = auth['info']['image']
+            u.password = 'password'
+        end
+        @user.save
+        session[:user_id] = @user.id 
+        redirect_to user_path(@user)
+    end
+
     def create
         @user = User.find_by(email: params[:user][:email])
         if params[:user][:email] == "" || params[:user][:password] == ""
