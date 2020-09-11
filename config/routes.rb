@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/cities/highly_rated' => 'cities#highly_rated', as: :highly_rated
 
   resources :users do
-    resources :trips
+    resources :destinations 
   end
 
   resources :cities, only: [:index, :show, :new, :create]
