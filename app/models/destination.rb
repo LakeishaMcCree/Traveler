@@ -10,5 +10,18 @@ class Destination < ApplicationRecord
     validates :comment, presence: true
     scope :five_star, -> { where(rating: 5) }
 
+    def city_attributes=(attributes)
+        if attributes[:city] != ""
+          city = City.find_or_create_by(name: attributes[:city])
+        if attributes[:country] != ""
+          country = Country.find_or_create_by(name: attributes[:country])
+        else
+          country = Country.find_by(id: attributes[:country_id])
+        end
+        country.cities << city if city != "" && country != ""
+        country.save if country != ""
+        self.city_id = city.id
+        end
+      end
     
 end
