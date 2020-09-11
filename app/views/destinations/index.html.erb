@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @trips.each do |trip| %>
+    <% @destinations.each do |trip| %>
     <tr class="border-bottom">
       <td class="no-underline"><%= link_to destination.city.name, user_destination_path(@user, destination) %></td>
       <td><%= destination.fave_attraction %></td>
@@ -24,6 +24,6 @@
 <br>
 <div class="button-below-table">
   <% if @user == current_user %>
-    <%= link_to "Add New Trip", new_user_destination_url(@user), :class => 'btn btn-sm btn-primary btn-rounded' %>
+    <%= link_to "Add A New Destination", new_user_destination_url(@user), :class => 'btn btn-sm btn-primary btn-rounded' %>
   <% end %>
 </div>
