@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root 'welcome#home'
 
   get '/signup' => 'users#new'
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   get '/auth/facebook/callback' => 'sessions#facebookcreate'
   post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy'
 
   get '/user/most_destinations' => 'users#most_destinations', as: :most_destinations
   get '/destinations/five_star' => 'destinations#five_star', as: :five_star
