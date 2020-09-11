@@ -19,7 +19,7 @@
       <% end %>
     <% end %>
 
-    <%= render partial: 'form', locals { f: f} %>
-    <%= f.submit "Add Destination", :class => 'btn btn-sm btn-success'%>
+    <%= render partial: 'destinations/form', locals: { f: f, button_name: "Add Destination" } %>
+    
   <% end %>
 </div>

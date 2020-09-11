@@ -3,7 +3,7 @@ class CitiesController < ApplicationController
     before_action :require_login
     
     def index
-        @city = City.all.order(:name)
+        @cities = City.all.order(:name)
     end
 
     def show
