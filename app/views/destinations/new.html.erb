@@ -1,4 +1,5 @@
-<h3>Add New Trip</h3><br>
+<div class="form">
+  <h3>Add New Trip</h3><br>
     <%= form_for :trip, url: user_trips_path do |f| %>
       <% if @city %>
         <%= f.hidden_field :city_id, value: @city.id %>
@@ -17,3 +18,8 @@
           <%= city_attr.text_field :country %><br><br>
       <% end %>
     <% end %>
+
+    <%= render partial: 'form', locals { f: f} %>
+    <%= f.submit "Add Trip", :class => 'btn btn-sm btn-success'%>
+  <% end %>
+</div>

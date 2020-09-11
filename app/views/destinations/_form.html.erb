@@ -8,3 +8,16 @@
 
 <%=f.label :comment, "Share Additional Details" %><br><br>
 <%= f.text_area :comment, :size => "35x5" %><br><br>
+
+<div class="form-errors">
+<% if @destination.errors.any? %>
+  <div id="error_explanation">
+    <p><%= pluralize(@destination.errors.count, "error") %> occurred:</p>
+    <ul>
+      <% @destination.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
