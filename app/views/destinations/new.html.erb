@@ -19,7 +19,8 @@
       <% end %>
     <% end %>
 
-    <%= render partial: 'destinations/form', locals: { f: f, button_name: "Add Destination" } %>
+    <%= render partial: 'destinations/form', locals: { f: f } %>
+    <%= f.submit "Add Destination" %>
     
   <% end %>
 </div>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   get '/auth/facebook/callback' => 'sessions#facebookcreate'
   post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
   delete '/logout' => 'sessions#destroy'
 
   get '/user/most_destinations' => 'users#most_destinations', as: :most_destinations

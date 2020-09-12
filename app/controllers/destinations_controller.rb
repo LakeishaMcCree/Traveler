@@ -8,7 +8,7 @@ class DestinationsController < ApplicationController
 
     def show
         find_user
-        find_trip
+        find_destination
     end
 
     def five_star
@@ -25,7 +25,7 @@ class DestinationsController < ApplicationController
         set_user 
         find_destination
         @destination = @user.destinations.build(destination_params)
-        if destination.save
+        if @destination.save
             redirect_to user_destinations_path(@user), :flash => { :success => "You've successfully added this trip." }
         else  
             render :new
@@ -63,7 +63,7 @@ class DestinationsController < ApplicationController
     end
 
     def find_destination
-        @destination = Destination.find(params[:id])
+        @destination = Destination.find_by_id(params[:id])
     end
 
     def find_city

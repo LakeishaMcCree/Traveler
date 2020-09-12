@@ -3,10 +3,10 @@
   <span class="bold-text">Average Rating: </span><%= @city.avg_rating %><br>
   <p><span class="bold-text">Total Reviews: </span><%= @city.destinations.count %></p>
 
-  <% @city.destinations.each do |trip| %>
+  <% @city.destinations.each do |destination| %>
     <div class="underlined-list">
       <%= destination.comment %>
-      <p>- <%= destination.user.name %> (<%= trip.rating %> stars)</p>
+      <p>- <%= destination.user.name %> (<%= destination.rating %> stars)</p>
     </div>
   <% end %>
 

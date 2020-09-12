@@ -8,9 +8,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @destinations.each do |trip| %>
+    <% @destinations.each do |destination| %>
+   
     <tr class="border-bottom">
-      <td class="no-underline"><%= link_to destination.city.name, user_destination_path(@user, destination) %></td>
+      <td class="no-underline"><%= link_to destination.city.name, user_destination_path(@user, destination.id) %></td>
       <td><%= destination.fave_attraction %></td>
       <% if @user == current_user %>
         <td><%= link_to "Edit Destination", edit_user_destination_url(@user, destination), :method => 'get' %></td>
